@@ -1,3 +1,6 @@
 [submodule "isaac_ros-dev/src/isaac_ros_common"]
 	path = isaac_ros-dev/src/isaac_ros_common
 	url = https://github.com/AoboJaing/isaac_ros_common.git
+[submodule "isaac_ros-dev/src/isaac_ros_image_pipeline"]
+	path = isaac_ros-dev/src/isaac_ros_image_pipeline
+	url = https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_image_pipeline.git

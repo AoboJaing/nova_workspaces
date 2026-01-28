@@ -5,3 +5,7 @@
 	path = isaac_ros-dev/src/ros2_ws
 	url = https://github.com/AoboJaing/ros2_ws
 	branch = main
+[submodule "isaac_ros-dev/src/rbe_ws"]
+	path = isaac_ros-dev/src/rbe_ws
+	url = https://github.com/AoboJaing/The_Robotics_Back_End_ws
+	branch = main

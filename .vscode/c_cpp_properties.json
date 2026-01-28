@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/opt/ros/humble/include/**",
+        "/workspaces/isaac_ros-config/persist/vscode-extensions/ranch-hand-robotics.rde-ros-2-1.2.1/samples/cpp/src/rde_cpp/include/**",
+        "/workspaces/isaac_ros-dev/src/isaac_ros_common/isaac_common/include/**",
+        "/workspaces/isaac_ros-dev/src/isaac_ros_common/isaac_ros_common/include/**",
+        "/usr/include/**",
+        "/workspaces/isaac_ros-dev/src/rbe_ws/install/**/include/**"
+      ],
+      "name": "ros2",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++17"
+    }
+  ],
+  "version": 4
+}

@@ -7,3 +7,9 @@
 *.tmp
 *.log
 __pycache__/
+isaac_ros-config/persist/
+*.gv
+*.pdf
+.vscode/*.db*
+.vscode/browse.vc.db
+.vscode/browse.vc.db-shm

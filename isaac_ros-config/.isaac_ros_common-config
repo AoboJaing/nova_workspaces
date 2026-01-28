@@ -1,0 +1,31 @@
+# 当前目录作为工作区根目录
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+WORKSPACES_ROOT="${SCRIPT_DIR}/../"
+
+# A 类：挂载
+DOCKER_ARGS=(
+  "-v" "${WORKSPACES_ROOT}:/workspaces"
+  "-v" "${WORKSPACES_ROOT}/isaac_ros-config/.bashrc_admin:/home/admin/.bashrc"
+
+  # ✅ Gazebo / Ignition 共享一份（admin + root 都指向同一份）
+  "-v" "${WORKSPACES_ROOT}/isaac_ros-config/persist/ignition:/home/admin/.ignition"
+  # "-v" "${WORKSPACES_ROOT}/isaac_ros-config/persist/ignition:/root/.ignition"
+
+  # ✅ VS Code：admin / root 分开（最稳）
+  "-v" "${WORKSPACES_ROOT}/isaac_ros-config/persist/admin/vscode-server:/home/admin/.vscode-server"
+  # "-v" "${WORKSPACES_ROOT}/isaac_ros-config/persist/root/vscode-server:/root/.vscode-server"
+
+  # ⭐ 可选：只共享 extensions（省空间，也挺稳）
+  "-v" "${WORKSPACES_ROOT}/isaac_ros-config/persist/vscode-extensions:/home/admin/.vscode-server/extensions"
+  # "-v" "${WORKSPACES_ROOT}/isaac_ros-config/persist/vscode-extensions:/root/.vscode-server/extensions"
+
+  # "-v" "/dev:/dev"
+)
+
+# B 类：docker layer 搜索路径
+CONFIG_DOCKER_SEARCH_DIRS=(
+  "${WORKSPACES_ROOT}/isaac_ros-config/docker_layers"
+)
+
+# B 类：启用 Dockerfile.aobo
+CONFIG_IMAGE_KEY="ros2_humble.aobo"

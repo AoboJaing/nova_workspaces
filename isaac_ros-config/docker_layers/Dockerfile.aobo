@@ -15,5 +15,6 @@ RUN /bin/bash -c 'set -eux; \
     ros-humble-urdf-tutorial \
     ros-humble-ros-gz \
     ros-humble-teleop-twist-keyboard \
+    can-utils \
   ; \
   rm -rf /var/lib/apt/lists/*'
